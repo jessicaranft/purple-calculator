@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purple Calculator</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator-wrapper">
+
+    <div class="calculator">
+
+      <div class="top-display">
+        <input type="text" placeholder="1 + 1" id="top-display">
+      </div>
+
+      <div class="bottom-display">
+        <input type="text" placeholder="2" id="bottom-display">
+        <div id="display-equals">
+          <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5.625C0 5.27982 0.279822 5 0.625 5H14.375C14.7202 5 15 5.27982 15 5.625C15 5.97018 14.7202 6.25 14.375 6.25H0.625C0.279822 6.25 0 5.97018 0 5.625Z" fill="#6B6B6B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.625C0 0.279822 0.279822 0 0.625 0H14.375C14.7202 0 15 0.279822 15 0.625C15 0.970178 14.7202 1.25 14.375 1.25H0.625C0.279822 1.25 0 0.970178 0 0.625Z" fill="#6B6B6B"/>
+          </svg>            
+        </div>
+      </div>
+  
+      <div class="keyboard-wrapper">
+        <div class="button">
+          <button id="btnCE">CE</button>
+        </div>
+        <div class="button">
+          <button id="btnC">C</button>
+        </div>
+        <div class="button">
+          <button id="btnPercentage">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4937 1.50628C18.8354 1.84799 18.8354 2.40201 18.4937 2.74372L2.74372 18.4937C2.40201 18.8354 1.84799 18.8354 1.50628 18.4937C1.16457 18.152 1.16457 17.598 1.50628 17.2563L17.2563 1.50628C17.598 1.16457 18.152 1.16457 18.4937 1.50628Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.3125 2.125C3.10438 2.125 2.125 3.10438 2.125 4.3125C2.125 5.52062 3.10438 6.5 4.3125 6.5C5.52062 6.5 6.5 5.52062 6.5 4.3125C6.5 3.10438 5.52062 2.125 4.3125 2.125ZM0.375 4.3125C0.375 2.13788 2.13788 0.375 4.3125 0.375C6.48712 0.375 8.25 2.13788 8.25 4.3125C8.25 6.48712 6.48712 8.25 4.3125 8.25C2.13788 8.25 0.375 6.48712 0.375 4.3125Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6875 13.5C14.4794 13.5 13.5 14.4794 13.5 15.6875C13.5 16.8956 14.4794 17.875 15.6875 17.875C16.8956 17.875 17.875 16.8956 17.875 15.6875C17.875 14.4794 16.8956 13.5 15.6875 13.5ZM11.75 15.6875C11.75 13.5129 13.5129 11.75 15.6875 11.75C17.8621 11.75 19.625 13.5129 19.625 15.6875C19.625 17.8621 17.8621 19.625 15.6875 19.625C13.5129 19.625 11.75 17.8621 11.75 15.6875Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button-purple">
+          <button id="btnDivide">
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 9C0.5 8.51675 0.891751 8.125 1.375 8.125H20.625C21.1082 8.125 21.5 8.51675 21.5 9C21.5 9.48325 21.1082 9.875 20.625 9.875H1.375C0.891751 9.875 0.5 9.48325 0.5 9Z" fill="#EBEBEB"/>
+              <path d="M11 3.75C11.9665 3.75 12.75 2.9665 12.75 2C12.75 1.0335 11.9665 0.25 11 0.25C10.0335 0.25 9.25 1.0335 9.25 2C9.25 2.9665 10.0335 3.75 11 3.75Z" fill="#EBEBEB"/>
+              <path d="M11 17.75C11.9665 17.75 12.75 16.9665 12.75 16C12.75 15.0335 11.9665 14.25 11 14.25C10.0335 14.25 9.25 15.0335 9.25 16C9.25 16.9665 10.0335 17.75 11 17.75Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button">
+          <button id="btnSeven">7</button>
+        </div>
+        <div class="button">
+          <button id="btnEight">8</button>
+        </div>
+        <div class="button">
+          <button id="btnNine">9</button>
+        </div>
+        <div class="button-purple">
+          <button id="btnMultiply">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17.4937 0.506282C17.8354 0.84799 17.8354 1.40201 17.4937 1.74372L1.74372 17.4937C1.40201 17.8354 0.84799 17.8354 0.506282 17.4937C0.164573 17.152 0.164573 16.598 0.506282 16.2563L16.2563 0.506282C16.598 0.164573 17.152 0.164573 17.4937 0.506282Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.506282 0.506282C0.84799 0.164573 1.40201 0.164573 1.74372 0.506282L17.4937 16.2563C17.8354 16.598 17.8354 17.152 17.4937 17.4937C17.152 17.8354 16.598 17.8354 16.2563 17.4937L0.506282 1.74372C0.164573 1.40201 0.164573 0.84799 0.506282 0.506282Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button">
+          <button id="btnFour">4</button>
+        </div>
+        <div class="button">
+          <button id="btnFive">5</button>
+        </div>
+        <div class="button">
+          <button id="btnSix">6</button>
+        </div>
+        <div class="button-purple">
+          <button id="btnMinus">
+            <svg width="22" height="2" viewBox="0 0 22 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 1C0.5 0.516751 0.891751 0.125 1.375 0.125H20.625C21.1082 0.125 21.5 0.516751 21.5 1C21.5 1.48325 21.1082 1.875 20.625 1.875H1.375C0.891751 1.875 0.5 1.48325 0.5 1Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button">
+          <button id="btnOne">1</button>
+        </div>
+        <div class="button">
+          <button id="btnTwo">2</button>
+        </div>
+        <div class="button">
+          <button id="btnThree">3</button>
+        </div>
+        <div class="button-purple">
+          <button id="btnPlus">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 11C0.5 10.5168 0.891751 10.125 1.375 10.125H20.625C21.1082 10.125 21.5 10.5168 21.5 11C21.5 11.4832 21.1082 11.875 20.625 11.875H1.375C0.891751 11.875 0.5 11.4832 0.5 11Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C11.4832 0.5 11.875 0.891751 11.875 1.375V20.625C11.875 21.1082 11.4832 21.5 11 21.5C10.5168 21.5 10.125 21.1082 10.125 20.625V1.375C10.125 0.891751 10.5168 0.5 11 0.5Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button">
+          <button id="btnPlusMinus">
+            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4937 3.50628C20.8354 3.84799 20.8354 4.40201 20.4937 4.74372L4.74372 20.4937C4.40201 20.8354 3.84799 20.8354 3.50628 20.4937C3.16457 20.152 3.16457 19.598 3.50628 19.2563L19.2563 3.50628C19.598 3.16457 20.152 3.16457 20.4937 3.50628Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.625 5.875C0.625 5.39175 1.01675 5 1.5 5H10.25C10.7332 5 11.125 5.39175 11.125 5.875C11.125 6.35825 10.7332 6.75 10.25 6.75H1.5C1.01675 6.75 0.625 6.35825 0.625 5.875Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.875 0.625C6.35825 0.625 6.75 1.01675 6.75 1.5V10.25C6.75 10.7332 6.35825 11.125 5.875 11.125C5.39175 11.125 5 10.7332 5 10.25V1.5C5 1.01675 5.39175 0.625 5.875 0.625Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.875 18.125C12.875 17.6418 13.2668 17.25 13.75 17.25H22.5C22.9832 17.25 23.375 17.6418 23.375 18.125C23.375 18.6082 22.9832 19 22.5 19H13.75C13.2668 19 12.875 18.6082 12.875 18.125Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+        <div class="button">
+          <button id="btnZero">0</button>
+        </div>
+        <div class="button">
+          <button id="btnComma">,</button>
+        </div>
+        <div class="button-purple">
+          <button id="btnEquals">
+            <svg width="22" height="10" viewBox="0 0 22 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 8.5C0.5 8.01675 0.891751 7.625 1.375 7.625H20.625C21.1082 7.625 21.5 8.01675 21.5 8.5C21.5 8.98325 21.1082 9.375 20.625 9.375H1.375C0.891751 9.375 0.5 8.98325 0.5 8.5Z" fill="#EBEBEB"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 1.5C0.5 1.01675 0.891751 0.625 1.375 0.625H20.625C21.1082 0.625 21.5 1.01675 21.5 1.5C21.5 1.98325 21.1082 2.375 20.625 2.375H1.375C0.891751 2.375 0.5 1.98325 0.5 1.5Z" fill="#EBEBEB"/>
+            </svg>              
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

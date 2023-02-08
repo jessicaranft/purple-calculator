@@ -1,0 +1,138 @@
+* {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  height: 100vh;
+  background: linear-gradient(180deg, #807ECE 0%, #8E7ECE 100%);
+}
+
+body, input, button {
+  font-family: 'Rubik', sans-serif;
+}
+
+.calculator-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.calculator {
+  background: #2D2A37;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04), 0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26), 0px 8px 17px rgba(0, 0, 0, 0.29), inset 0px 6px 8px rgba(255, 255, 255, 0.1), inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 48px;
+
+  width: 356px;
+  height: 566px;
+
+  padding: 54px 32px 32px;
+}
+
+.top-display {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.top-display input {
+  font-size: 20px;
+  color: #6B6B6B;
+  line-height: 140%;
+  text-align: right;
+
+  width: 248px;
+  height: 28px;
+
+  background: transparent;
+  border: none;
+}
+
+.bottom-display {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 26px;
+  position: relative;
+}
+
+.bottom-display input {
+  font-size: 36px;
+  line-height: 140%;
+  color: #EBEBEB;
+  text-align: right;
+
+  width: 248px;
+  height: 50px;
+
+  background: transparent;
+  border: none;
+}
+
+#display-equals {
+  position: absolute;
+  left: 22px;
+
+  font-size: 28px;
+  color: #6B6B6B;
+}
+
+.keyboard-wrapper {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 12px;
+}
+
+.button button,
+.button-purple button {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 999px;
+  border: none;
+
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+
+  color: #EBEBEB;
+
+  cursor: pointer;
+}
+
+.button button {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+}
+
+.button-purple button {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+
+}
+
+.button #btnCE {
+  color: #975DFA;
+}
+
+.button #btnComma {
+  font-size: 36px;
+  line-height: 43px;
+}
+
+/* Criar um estado hover e active para os botões */
