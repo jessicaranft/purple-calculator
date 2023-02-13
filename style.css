@@ -4,17 +4,13 @@
   box-sizing: border-box;
 }
 
-:root {
-  font-size: 62.5%;
-}
-
 body {
   font-size: 16px;
   height: 100vh;
   background: linear-gradient(180deg, #807ECE 0%, #8E7ECE 100%);
 }
 
-body, input, button {
+body, button {
   font-family: 'Rubik', sans-serif;
 }
 
@@ -34,57 +30,41 @@ body, input, button {
   height: 566px;
 
   padding: 54px 32px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-display {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.top-display input {
-  font-size: 20px;
-  color: #6B6B6B;
-  line-height: 140%;
-  text-align: right;
+  justify-content: right;
+  gap: 2px;
 
   width: 248px;
   height: 28px;
 
-  background: transparent;
-  border: none;
+  margin-bottom: 8px;
+
+  font-size: 20px;
+  color: #6B6B6B;
+  line-height: 140%;
+  text-align: right;
+  letter-spacing: 2px;
 }
 
 .bottom-display {
-  width: 100%;
+  width: 248px;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 26px;
-  position: relative;
-}
 
-.bottom-display input {
   font-size: 36px;
   line-height: 140%;
   color: #EBEBEB;
   text-align: right;
-
-  width: 248px;
-  height: 50px;
-
-  background: transparent;
-  border: none;
-}
-
-#display-equals {
-  position: absolute;
-  left: 22px;
-
-  font-size: 28px;
-  color: #6B6B6B;
 }
 
 .keyboard-wrapper {
@@ -115,15 +95,34 @@ body, input, button {
   cursor: pointer;
 }
 
-.button button {
+.button button,
+.button button:active {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
   box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+}
+
+.button button:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #4e495f;
+  transition: .1s;
+}
+
+.button button:active {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
 }
 
 .button-purple button {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
   box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
 
+}
+
+.button-purple button:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2;
+  transition: .1s;
+}
+
+.button-purple button:active {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #462878;
 }
 
 .button #btnCE {
