@@ -1,161 +1,206 @@
-let topDisplay = document.querySelector('.top-display');
-let bottomDisplay = document.querySelector('.bottom-display');
-let firstNumber = document.querySelector('#first-number');
-let secondNumber = document.querySelector('#second-number');
-let operator = document.querySelector('#operator');
+const topDisplay = document.querySelector('.top-display');
+const bottomDisplay = document.querySelector('.bottom-display-result');
 
-let btnCE = document.querySelector('#btnCE');
-let btnC = document.querySelector('#btnC');
-let btnPercentage = document.querySelector('#btnPercentage');
-let btnDivide = document.querySelector('#btnDivide');
-let btnSeven = document.querySelector('#btnSeven');
-let btnEight = document.querySelector('#btnEight');
-let btnNine = document.querySelector('#btnNine');
-let btnMultiply = document.querySelector('#btnMultiply');
-let btnFour = document.querySelector('#btnFour');
-let btnFive = document.querySelector('#btnFive');
-let btnSix = document.querySelector('#btnSix');
-let btnMinus = document.querySelector('#btnMinus');
-let btnOne = document.querySelector('#btnOne');
-let btnTwo = document.querySelector('#btnTwo');
-let btnThree = document.querySelector('#btnThree');
-let btnPlus = document.querySelector('#btnPlus');
-let btnPlusMinus = document.querySelector('#btnPlusMinus');
-let btnZero = document.querySelector('#btnZero');
-let btnComma = document.querySelector('#btnComma');
-let btnEquals = document.querySelector('#btnEquals');
+const btnCE = document.querySelector('#btnCE');
+const btnC = document.querySelector('#btnC');
+const btnPercentage = document.querySelector('#btnPercentage');
+const btnDivide = document.querySelector('#btnDivide');
+const btnSeven = document.querySelector('#btnSeven');
+const btnEight = document.querySelector('#btnEight');
+const btnNine = document.querySelector('#btnNine');
+const btnMultiply = document.querySelector('#btnMultiply');
+const btnFour = document.querySelector('#btnFour');
+const btnFive = document.querySelector('#btnFive');
+const btnSix = document.querySelector('#btnSix');
+const btnMinus = document.querySelector('#btnMinus');
+const btnOne = document.querySelector('#btnOne');
+const btnTwo = document.querySelector('#btnTwo');
+const btnThree = document.querySelector('#btnThree');
+const btnPlus = document.querySelector('#btnPlus');
+const btnPlusMinus = document.querySelector('#btnPlusMinus');
+const btnZero = document.querySelector('#btnZero');
+const btnComma = document.querySelector('#btnComma');
+const btnEquals = document.querySelector('#btnEquals');
 
-let topDisplayContent = [];
-let firstNumberContent = firstNumber.innerHTML;
-let secondNumberContent = secondNumber.innerHTML;
-let operatorContent = operator.innerHTML;
+//let topDisplayContent = topDisplay.innerHTML;
+//let firstNumberContent = firstNumber.innerHTML;
+//let secondNumberContent = secondNumber.innerHTML;
+//let operatorContent = operator.innerHTML;
 
-// Função que vai automatizar a captação do valor do botão
+/** 
+ * CRIAR AS FUNCIONALIDADES PRIMEIRO!!!
+ * 
+ * Porque assim vou atualizando o display conforme o "conteúdo" do console.log.
+ * 
+ * 1- Capturar números, converter para number (?)
+ * 2- Criar as operações
+ * 3- Criar a funcionalidade de todos os outros botões
+ * 4- Testar tudo apenas com console.log, no máximo inserindo o resultado no bottomDisplay
+ * 5- Por último criar a funcionalidade que atualiza o display com o conteúdo da operação, a cada botão clicado.
+ *    > Talvez tenha que converter toda a operação em string.
+*/
+
+const firstNumber = document.querySelector('#first-number');
+const secondNumber = document.querySelector('#second-number');
+const operatorDisplay = document.querySelector('#operator');
+let operator;
+let result;
+
+function resizeInput() {
+  firstNumber.style.width = ((firstNumber.value.length + 1) * 12) + 'px';
+  secondNumber.style.width = ((secondNumber.value.length + 1) * 12) + 'px';
+}
+
 function handleBtnClick(value) {
-  console.log('Operator:', operatorContent);
-  console.log('Value:', value);
 
-  if(!firstNumberContent && !secondNumberContent && !operatorContent) { // se não tem conteúdo
-    firstNumberContent = value;
-    firstNumber.innerHTML = firstNumberContent;
-  } else if (firstNumberContent && !operatorContent) { // se tem número mas não tem operador
-    firstNumberContent = firstNumberContent + value;
-    firstNumber.innerHTML = firstNumberContent;
-  } else if (firstNumberContent && operatorContent) { // se tem número e operador
-    secondNumberContent = secondNumberContent + value;
-    secondNumber.innerHTML = secondNumberContent;
+  if(!firstNumber.value && !secondNumber.value && !operator) { // se não tem conteúdo
+    firstNumber.value = String(value);
+    parseFloat(firstNumber);
+    resizeInput();
+  } else if (firstNumber.value && !operator) { // se tem número mas não tem operador
+    firstNumber.value = firstNumber.value + String(value);
+    parseFloat(firstNumber);
+    resizeInput();
+  } else if (firstNumber.value && operator) { // se tem número e operador
+    secondNumber.value = secondNumber.value + String(value);
+    parseFloat(secondNumber);
+    resizeInput();
   }
+  console.log('Operator:', operator);
+  console.log('First Number:', firstNumber.value);
+  console.log('Second Number:', secondNumber.value);
+}
+
+function calculate() {
+  const firstCompleteNumber = parseFloat(firstNumber.value);
+  const secondCompleteNumber = parseFloat(secondNumber.value);
+  let result;
+
+  if(operator === '+') {
+    result = firstCompleteNumber + secondCompleteNumber;
+  } else if (operator === '-') {
+    result = firstCompleteNumber - secondCompleteNumber;
+  } else if (operator === '*') {
+    result = firstCompleteNumber * secondCompleteNumber;
+  } else if (operator === '/') {
+    result = firstCompleteNumber / secondCompleteNumber;
+  }
+  bottomDisplay.innerText = result;
+  console.log(result);
 }
 
 btnZero.addEventListener('click', function() {
   handleBtnClick(0);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnOne.addEventListener('click', function() {
   handleBtnClick(1);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnTwo.addEventListener('click', function() {
   handleBtnClick(2);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnThree.addEventListener('click', function() {
   handleBtnClick(3);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnFour.addEventListener('click', function() {
   handleBtnClick(4);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnFive.addEventListener('click', function() {
   handleBtnClick(5);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnSix.addEventListener('click', function() {
   handleBtnClick(6);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnSeven.addEventListener('click', function() {
   handleBtnClick(7);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnEight.addEventListener('click', function() {
   handleBtnClick(8);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
 btnNine.addEventListener('click', function() {
   handleBtnClick(9);
-  firstNumberContent = firstNumber.innerHTML;
-  secondNumberContent = secondNumber.innerHTML;
 });
 
-//corrigir essa função
 btnComma.addEventListener('click', function() {
-  if (!topDisplayContent.includes(',')) {
-    topDisplayContent.push(',');
-    topDisplay.textContent = topDisplayContent.join('');
+  if (!firstNumber.value.includes('.') && !secondNumber.value) {
+    firstNumber.value = parseFloat(firstNumber.value) + ".";
+  } else if (firstNumber.value && !secondNumber.value.includes('.')) {
+    secondNumber.value = parseFloat(secondNumber.value) + ".";
   }
 });
 
 btnPlus.addEventListener('click', function() {
-  operator.innerHTML = '+';
-  operatorContent = operator.innerHTML;
+  operator = '+';
+  operatorDisplay.innerText = "+";
 });
 
 btnMinus.addEventListener('click', function() {
-  operator.innerHTML = '-';
-  operatorContent = operator.innerHTML;
+  operator = '-';
+  operatorDisplay.innerText = "-";
 });
 
 btnMultiply.addEventListener('click', function() {
-  operator.innerHTML = 'x';
-  operatorContent = operator.innerHTML;
+  operator = '*';
+  operatorDisplay.innerText = "x";
 });
 
 btnDivide.addEventListener('click', function() {
-  operator.innerHTML = '÷';
-  operatorContent = operator.innerHTML;
+  operator = '/';
+  operatorDisplay.innerText = "÷";
 });
 
 btnPercentage.addEventListener('click', function() {
-  operator.innerHTML = '%';
-  operatorContent = operator.innerHTML;
+  const firstCompleteNumber = parseFloat(firstNumber.value);
+  const secondCompleteNumber = parseFloat(secondNumber.value);
+  let percentageResult = (firstCompleteNumber * secondCompleteNumber) / 100;
+  let result;
+
+  if(operator === '+') {
+    result = firstCompleteNumber + percentageResult;
+  } else if (operator === '-') {
+    result = firstCompleteNumber - percentageResult;
+  } else if (operator === '*') {
+    result = firstCompleteNumber * percentageResult;
+  } else if (operator === '/') {
+    result = firstCompleteNumber / percentageResult;
+  }
+  bottomDisplay.innerText = result;
 });
 
-// corrigir essa função
 btnCE.addEventListener('click', function() {
-  topDisplayContent.pop();
-  topDisplay.textContent = topDisplayContent.join('');
+  if (!secondNumber.value && firstNumber.value) {
+    firstNumber.value = firstNumber.value.substring(0, firstNumber.value.length - 1);
+    parseFloat(firstNumber.value);
+  } else if (secondNumber.value) {
+    secondNumber.value = secondNumber.value.substring(0, secondNumber.value.length - 1);
+    parseFloat(secondNumber.value);
+  }
 });
 
-// corrigir essa função
 btnC.addEventListener('click', function() {
-  topDisplayContent = [];
-  topDisplay.textContent = topDisplayContent;
+  firstNumber.value = "";
+  secondNumber.value = "";
+  operator = "";
+  operatorDisplay.innerText = "";
+  bottomDisplay.innerText = "0";
 });
 
 btnEquals.addEventListener('click', function() {
   calculate();
 })
 
-// adicionar função do +/-
-
-// adicionar funções de soma, etc ao array
+btnPlusMinus.addEventListener('click', function() {
+  if (!secondNumber.value && firstNumber.value) {
+    firstNumber.value = parseFloat(firstNumber.value) * -1;
+  } else if (secondNumber.value) {
+    secondNumber.value = parseFloat(secondNumber.value) * -1;
+  }
+})

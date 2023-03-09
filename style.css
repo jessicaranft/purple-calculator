@@ -39,13 +39,24 @@ body, button {
 .top-display {
   display: flex;
   justify-content: right;
-  gap: 2px;
-
-  width: 248px;
-  height: 28px;
-
   margin-bottom: 8px;
+  width: 248px;
+}
 
+.top-display input {
+  min-width: 20px;
+  max-width: 100px;
+  height: 28px;
+  background: none;
+  border: none;
+}
+
+#second-number {
+  text-align: left;
+}
+
+.top-display input,
+#operator {
   font-size: 20px;
   color: #6B6B6B;
   line-height: 140%;
@@ -133,5 +144,3 @@ body, button {
   font-size: 36px;
   line-height: 43px;
 }
-
-/* Criar um estado hover e active para os botões */

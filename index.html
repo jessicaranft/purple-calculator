@@ -19,17 +19,21 @@
     <div class="calculator">
 
       <div class="top-display">
-        <div id="first-number"></div>
+        <input id="first-number" type="text" />
         <div id="operator"></div>
-        <div id="second-number"></div>
+        <input id="second-number" type="text" />
       </div>
 
       <div class="bottom-display">
-        <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5.625C0 5.27982 0.279822 5 0.625 5H14.375C14.7202 5 15 5.27982 15 5.625C15 5.97018 14.7202 6.25 14.375 6.25H0.625C0.279822 6.25 0 5.97018 0 5.625Z" fill="#6B6B6B"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.625C0 0.279822 0.279822 0 0.625 0H14.375C14.7202 0 15 0.279822 15 0.625C15 0.970178 14.7202 1.25 14.375 1.25H0.625C0.279822 1.25 0 0.970178 0 0.625Z" fill="#6B6B6B"/>
-        </svg>  
-        2          
+        <div class="bottom-display-equals">
+          <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5.625C0 5.27982 0.279822 5 0.625 5H14.375C14.7202 5 15 5.27982 15 5.625C15 5.97018 14.7202 6.25 14.375 6.25H0.625C0.279822 6.25 0 5.97018 0 5.625Z" fill="#6B6B6B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.625C0 0.279822 0.279822 0 0.625 0H14.375C14.7202 0 15 0.279822 15 0.625C15 0.970178 14.7202 1.25 14.375 1.25H0.625C0.279822 1.25 0 0.970178 0 0.625Z" fill="#6B6B6B"/>
+          </svg>  
+        </div>
+        <div class="bottom-display-result">
+          0
+        </div>         
       </div>
   
       <div class="keyboard-wrapper">
@@ -121,7 +125,7 @@
           <button id="btnZero">0</button>
         </div>
         <div class="button">
-          <button id="btnComma">,</button>
+          <button id="btnComma">.</button>
         </div>
         <div class="button-purple">
           <button id="btnEquals">
